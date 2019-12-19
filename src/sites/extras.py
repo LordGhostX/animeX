@@ -2,7 +2,7 @@
 import os
 import re
 import requests
-import multithread
+import wget
 
 # main download path default is user directory
 main_path = os.path.expanduser("~")
@@ -66,9 +66,8 @@ def init_download(anime_title):
 def download_mp4(url, filename):
     # Download mp4 file
     print("Started downloading {}".format(os.path.basename(filename)))
-    downloader = multithread.Downloader(url, filename, threads=4)
-    downloader.start()
-    print("Finished downloading {}".format(os.path.basename(filename)))
+    wget.download(url, filename)
+    print("\nFinished downloading {}".format(os.path.basename(filename)))
 
 def sanitize_dir(dir):
     # sanitizes directory path
