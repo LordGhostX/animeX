@@ -5,7 +5,7 @@ Easily download anime from your favorite websites without having to visit them.
 AnimeX is a CLI tool for downloading anime directly to your PC.
 
 ## Screenshot
-![home](home.jpg)
+![home](img/home.jpg)
 
 ## Supported Websites
 * AnimePahe
@@ -14,4 +14,4 @@ AnimeX is a CLI tool for downloading anime directly to your PC.
 * [LordGhostX](https://github.com/LordGhostX)
 
 ## License
-* GNU v3
+* GPL-3.0

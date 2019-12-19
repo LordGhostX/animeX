@@ -1,6 +1,6 @@
 # our friendly neighbourhood imports :)
-from animepahe import AnimePahe
-from extras import banner, init_download
+from sites.animepahe import AnimePahe
+from sites.extras import banner, init_download
 
 def main():
     site_map = {"1": AnimePahe}

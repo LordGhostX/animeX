@@ -1,7 +1,7 @@
 # AnimePahe Download Manager
 import os
 import requests
-from extras import *
+from .extras import *
 
 class AnimePahe():
     def __init__(self):
