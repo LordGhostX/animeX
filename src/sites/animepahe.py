@@ -74,6 +74,8 @@ class AnimePahe():
             start = end = int(episodes.split(":")[0])
         else:
             start, end = list(map(int, episodes.split(":")))
+        if end == -1:
+            end = float("inf")
 
         # Go through each anime episode page
         for i in range(last_page, 0, -1):

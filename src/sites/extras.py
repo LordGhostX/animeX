@@ -65,7 +65,7 @@ def init_download(anime_title):
 
 def download_mp4(url, filename):
     # Download mp4 file
-    print("Started downloading {}".format(os.path.basename(filename)))
+    print("\nStarted downloading {}".format(os.path.basename(filename)))
     wget.download(url, filename)
     print("\nFinished downloading {}".format(os.path.basename(filename)))
 
