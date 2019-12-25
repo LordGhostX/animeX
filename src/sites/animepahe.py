@@ -36,7 +36,7 @@ class AnimePahe():
             # Display search results for user to select from
             print("Search results for '{}' from {}".format(anime_title, self.source))
             for i, j in enumerate(search_result):
-                print("{}. {} - {}".format(i + 1, j["title"], self.source))
+                print("{}. {}".format(i + 1, j["title"]))
             choice = int(input("\nEnter the anime no:  [1]: "))
             anime_data = search_result[choice - 1]
             init_download(anime_data["title"])
@@ -94,7 +94,7 @@ class AnimePahe():
                     # Get the mp4 url of the episode
                     stream_url = self.get_stream_url(episode, quality)
                     # Generate the filename to save the video
-                    filename = os.path.join(main_path, anime_data["title"], "{} {}.mp4".format(anime_data["title"], episode_num).replace(" ", "_"))
+                    filename = os.path.join(main_path, anime_data["title"], os.path.basename(stream_url))
                     # If the file already exists skip it, else download
                     if not os.path.exists(filename):
                         download_mp4(stream_url, filename)
@@ -112,5 +112,5 @@ class AnimePahe():
             print("Couldn't find '{}' on {}".format(anime_title, self.source))
             return
         else:
-            print("\nGetting episodes info...")
+            print("\nGetting episodes info...", end="")
             self.download_episodes(anime_data, episodes, quality)

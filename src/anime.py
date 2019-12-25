@@ -24,6 +24,7 @@ def main():
     quality = quality_map[choice - 1]
 
     downloader.download_anime(anime_title, "{}:{}".format(episode_start, episode_end), quality)
+    print("\n\nDone!!!")
 
 if __name__ == "__main__":
     main()

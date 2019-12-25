@@ -65,9 +65,8 @@ def init_download(anime_title):
 
 def download_mp4(url, filename):
     # Download mp4 file
-    print("\nStarted downloading {}".format(os.path.basename(filename)))
+    print("\n\nStarted downloading {}".format(os.path.basename(filename)))
     wget.download(url, filename)
-    print("\nFinished downloading {}".format(os.path.basename(filename)))
 
 def sanitize_dir(dir):
     # sanitizes directory path
