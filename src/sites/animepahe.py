@@ -39,6 +39,7 @@ class AnimePahe():
                 print("{}. {}".format(i + 1, j["title"]))
             choice = int(input("\nEnter the anime no:  [1]: "))
             anime_data = search_result[choice - 1]
+            anime_data["title"] = sanitize_dir(anime_data["title"])
             init_download(anime_data["title"])
 
             return anime_data
