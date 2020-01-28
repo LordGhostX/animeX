@@ -2,7 +2,7 @@
 import os
 import re
 import requests
-import wget
+from tqdm import tqdm
 
 # main download path default is user directory
 main_path = os.path.expanduser("~")
@@ -66,7 +66,16 @@ def init_download(anime_title):
 def download_mp4(url, filename):
     # Download mp4 file
     print("\n\nStarted downloading {}".format(os.path.basename(filename)))
-    wget.download(url, filename)
+
+    r = requests.get(url, stream=True)
+    total_size = int(r.headers.get('content-length', 0))
+    block_size = 1024
+    t = tqdm(total=total_size, unit='iB', unit_scale=True)
+    with open(filename, 'wb') as f:
+        for data in r.iter_content(block_size):
+            t.update(len(data))
+            f.write(data)
+    t.close()
 
 def sanitize_dir(dir):
     # sanitizes directory path
